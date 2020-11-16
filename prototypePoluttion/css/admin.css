@@ -1,0 +1,57 @@
+
+.formTitle {
+    border: 3px solid #f1f1f1;
+    border-radius: 2%;
+    margin-left: 12%;
+    margin-right: 12%;
+    text-align: center;
+    font: xx-large;
+  }
+
+form {
+    text-align: center;
+    color: cornflowerblue;
+    border-radius: 2%;
+    margin-left: 12%;
+    margin-right: 12%;
+    text-align: center;
+    border: 3px solid #2394f073;
+    background-color: cornflowerblue;
+}
+
+.downloadButton{
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 89%;
+  
+}
+
+button {
+    background-color: rgb(29, 64, 221);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+
+.title{
+    color: rgb(30, 129, 241);
+    font-size: 44px;
+    text-align: center;
+    
+}
+input {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 83%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "PrototypePollutionPoC",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.4",
+    "node.extend": "2.0.0"
+  }
+}

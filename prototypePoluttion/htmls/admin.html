@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <h1 class="title">Admin Tools</h1>
+    <div class="formTitle">
+        <h1>URL Downloader</h1>
+    </div>
+    <form onsubmit="check_url()">
+        <input type="text" placeholder="Enter URL" id="url" required>
+        <button type="submit">Submit</button>
+        <br>
+        <a href="/admin/downloads/last_url_download.html">
+            <button type="button" class="downloadButton">Download</button>
+        </a>
+    </form>
+</body>
+
+<script>
+    function check_url(){
+        var http = new XMLHttpRequest();
+        var url = "/admin/check_url";
+        var params = "url=" + document.getElementById("url").value;
+
+        http.open("POST", url, true);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        http.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                alert(http.responseText);
+            }
+        }
+
+        http.send(params);
+    }
+</script>
+</html>
