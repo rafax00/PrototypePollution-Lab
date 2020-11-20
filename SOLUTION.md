@@ -26,13 +26,13 @@ At the source code, in the routes.js file, we can see that there is a credential
  "isAdmin":true
 ```
 
-Looking at the route **/admin/check_url** (the route used to download the URL), you can see a **checkLogin** and a **checkAdmin** function, responsible to grant or deny access to users that called this route.
+Looking at the route **/admin/check_url** (the route used to download the URL), you can see the functions **checkLogin** and **checkAdmin**, responsible to grant or deny access to users that called this route.
 
 ![check_url](https://i.ibb.co/HHqcHFC/7-check-url-code.png)
 
-There is a command execution after the isAdmin check, passing the chosen URL to the command without arguments scaping. So if we gain administrative permissions, we can easily trigger a remote command execution vulnerability.
+There is a command execution after the administrative check, passing the chosen URL to the command without arguments scaping. So if we gain administrative permissions, we can easily trigger a remote command execution vulnerability.
 
-Since we don't have the admin credentials, because it's a random string, let's take a look into the **checkLogin** and **checkAdmin** functions to see if we find a bypass.
+Because it's a random string, we don't have the admin credentials, so let's take a look into the **checkLogin** and **checkAdmin** functions to see if we find a bypass.
 
 Well, there is nothing interesting in the **checkLogin** function, since we already have a valid credential, let's look the **checkAdmin** function:
 
