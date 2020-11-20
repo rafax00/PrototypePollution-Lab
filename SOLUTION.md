@@ -2,7 +2,7 @@
 
 ## Recon
 
-By opening the URL http://127.0.0.1:3333, we can see that a Singin Page has provided the following credential to log in as a guest user:
+By opening the URL http://127.0.0.1:3333, we can see that the Login Page has provided the following credential to log in as a guest user:
 
 * **Username**: *guest*
 * **Password**: *pass123*
@@ -26,13 +26,13 @@ At the source code, in the routes.js file, we can see that there is a credential
  "isAdmin":true
 ```
 
-Looking at the route **/admin/check_url** (the route used to download the URL), you can see the functions **checkLogin** and **checkAdmin**, responsible to grant or deny access to users that called this route.
+Looking at the route **/admin/check_url** (the route used to download the URL), you can see the functions **checkLogin** and **checkAdmin**, responsible to grant or deny access to users that called the route.
 
 ![check_url](https://i.ibb.co/HHqcHFC/7-check-url-code.png)
 
 There is a command execution after the administrative check, passing the chosen URL to the command without arguments scaping. So if we gain administrative permissions, we can easily trigger a remote command execution vulnerability.
 
-Because it's a random string, we don't have the admin credentials, so let's take a look into the **checkLogin** and **checkAdmin** functions to see if we find a bypass.
+We don't know the admin passoword because it's a random string, so let's take a look into the **checkLogin** and **checkAdmin** functions to see if we find a bypass.
 
 Well, there is nothing interesting in the **checkLogin** function, since we already have a valid credential, let's look the **checkAdmin** function:
 
@@ -61,7 +61,7 @@ To exploit it, we need to send the following payload with an unauthenticated use
 }
 ```
 
-The payload above will pollute the guest credential, given him administrative permission, E.g:
+The payload above will pollute the guest credential, giving him a administrative permission, E.g:
 
 * Before Pollution:
 
