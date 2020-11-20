@@ -4,6 +4,8 @@ Prototype Pollution Lab
 ## Objective
 Try to find the **Prototype Pollution Vulnerability** to achieve a **Remote Code Execution** and get a reverse shell.
 
+*You can read the code*
+
 ## Install
 
 * Clone the repository:
